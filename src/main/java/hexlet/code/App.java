@@ -1,6 +1,7 @@
 package hexlet.code;
 import hexlet.code.games.Calk;
 import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
 
 public class App {
     public static void main(String[] args) {
@@ -8,12 +9,14 @@ public class App {
         final int maxCount = 3; //количество итераций в играх
 
 
-        System.out.print("Please enter the game number and press Enter.\n"
-                + "1 - Greet\n"
-                + "2 - Even\n"
-                + "3 - Calc\n"
-                + "0 - Exit\n"
-                + "Your choice: ");
+        System.out.print("""
+                Please enter the game number and press Enter.
+                1 - Greet
+                2 - Even
+                3 - Calc
+                4 - GCD
+                0 - Exit
+                Your choice:\s""");
 
         int choose = Engine.userIntAnswer();
 
@@ -28,6 +31,10 @@ public class App {
             case 3:
                 userName = Engine.greeting();
                 Calk.calk(maxCount, userName);
+                break;
+            case 4 :
+                userName = Engine.greeting();
+                Gcd.gcd(maxCount, userName);
             case 0:
                 return;
             default:

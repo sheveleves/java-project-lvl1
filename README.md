@@ -8,3 +8,6 @@ https://asciinema.org/a/hccpU99oVA6TjOAbjB7J3lUcX
 
 Game "Calc"
 https://asciinema.org/a/12ZVBHZLVwNqq5kz1FBlXn9lI
+
+Game "GCD"
+https://asciinema.org/a/55AX37CWVByAeWZYb10tLSF5i

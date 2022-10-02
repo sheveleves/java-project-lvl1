@@ -5,13 +5,14 @@ import hexlet.code.Engine;
 public class Even {
     public static void even(int sumIterations, String userName) {
         int count = 0; //счетчик количества вводов пользователя
+        int randomNumber; //случайное число
         final int maxRandom = 100; //максимальное случайное число
         boolean userError = false; //флаг - ошибка пользователя
         String correctAnswer; // правильный ответ
 
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         while (count < sumIterations && !userError) {
-            int randomNumber = Engine.ramdomNumber(maxRandom);
+            randomNumber = Engine.ramdomNumber(maxRandom);
             if (randomNumber % 2 == 0) {
                 correctAnswer = "yes";
             } else {

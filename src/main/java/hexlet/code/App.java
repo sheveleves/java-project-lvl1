@@ -2,6 +2,7 @@ package hexlet.code;
 import hexlet.code.games.Calk;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 public class App {
     public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
                 0 - Exit
                 Your choice:\s""");
 
@@ -32,9 +34,13 @@ public class App {
                 userName = Engine.greeting();
                 Calk.calk(maxCount, userName);
                 break;
-            case 4 :
+            case 4:
                 userName = Engine.greeting();
                 Gcd.gcd(maxCount, userName);
+            case 5:
+                userName = Engine.greeting();
+                Progression.progression(maxCount, userName);
+                break;
             case 0:
                 return;
             default:

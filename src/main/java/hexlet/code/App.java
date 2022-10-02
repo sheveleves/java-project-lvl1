@@ -2,12 +2,20 @@ package hexlet.code;
 import hexlet.code.games.Calk;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 public class App {
     public static void main(String[] args) {
         String userName; //имя игрока
         final int maxCount = 3; //количество итераций в играх
+        final int optionGreet = 1;
+        final int optionEven = 2;
+        final int optionCalk = 3;
+        final int optionGCD = 4;
+        final int optionProgression = 5;
+        final int optionPrime = 6;
+        final int optionExit = 0;
 
 
         System.out.print("""
@@ -17,31 +25,36 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit
                 Your choice:\s""");
 
         int choose = Engine.userIntAnswer();
 
         switch (choose) {
-            case 1:
+            case optionGreet:
                 Engine.greeting();
                 break;
-            case 2:
+            case optionEven:
                 userName = Engine.greeting();
                 Even.even(maxCount, userName);
                 break;
-            case 3:
+            case optionCalk:
                 userName = Engine.greeting();
                 Calk.calk(maxCount, userName);
                 break;
-            case 4:
+            case optionGCD:
                 userName = Engine.greeting();
                 Gcd.gcd(maxCount, userName);
-            case 5:
+            case optionProgression:
                 userName = Engine.greeting();
                 Progression.progression(maxCount, userName);
                 break;
-            case 0:
+            case optionPrime:
+                userName = Engine.greeting();
+                Prime.prime(maxCount, userName);
+                break;
+            case optionExit:
                 return;
             default:
         }

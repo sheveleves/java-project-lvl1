@@ -14,10 +14,10 @@ public class Calk {
         int correctAnswer = 0; // правильный ответ
         String expression = "*"; //мат. выражение
 
-        System.out.print("What is the result of the expression?\n"
-                + "Question: ");
+        System.out.println("What is the result of the expression?");
+
         while (count < sumIterations && !userError) {
-            //случайные числа и математическое выражение
+            System.out.print("Question: ");
             oneNumber = Engine.ramdomNumber(maxRandom);
             twoNumber = Engine.ramdomNumber(maxRandom);
             mathExpression = Engine.ramdomNumber(maxExpression);
@@ -38,6 +38,7 @@ public class Calk {
             }
 
             System.out.println(oneNumber + " " + expression + " " + twoNumber);
+            System.out.print("Your answer: ");
             int answer = Engine.userIntAnswer();
 
             if (answer == correctAnswer) {

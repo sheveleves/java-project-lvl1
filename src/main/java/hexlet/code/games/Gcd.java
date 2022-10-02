@@ -10,7 +10,7 @@ public class Gcd {
         return findGcd(secondNumber, firstNumber % secondNumber);
     }
 
-    public static void gcd (int sumIterations, String userName) {
+    public static void gcd(int sumIterations, String userName) {
         final int maxRandom = 100; //максимальное случайное число
         int oneNumber; //первое случайное число
         int twoNumber; //второе случайное число
@@ -19,7 +19,7 @@ public class Gcd {
         int correctAnswer; // правильный ответ
 
         System.out.println("Find the greatest common divisor of given numbers.");
-        while (count < 3 && !userError) {
+        while (count < sumIterations && !userError) {
             System.out.print("Question: ");
             oneNumber = Engine.ramdomNumber(maxRandom);
             twoNumber = Engine.ramdomNumber(maxRandom);
@@ -41,5 +41,4 @@ public class Gcd {
             }
         }
     }
-
 }

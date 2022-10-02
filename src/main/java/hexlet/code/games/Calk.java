@@ -35,6 +35,8 @@ public class Calk {
                     expression = "-";
                     correctAnswer = oneNumber - twoNumber;
                 }
+                default -> {
+                }
             }
 
             System.out.println(oneNumber + " " + expression + " " + twoNumber);

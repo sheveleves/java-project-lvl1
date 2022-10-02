@@ -32,8 +32,6 @@ public class Even {
                         + correctAnswer + "' Let's try again, " + userName + "!");
                 userError = true;
             }
-
         }
-
     }
 }

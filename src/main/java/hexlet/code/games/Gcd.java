@@ -1,7 +1,10 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 
 public class Gcd {
+    public static final int MAX_RANDOM_GCD = 100; //максимальное случайное число
+
     //поиск наибольшего общего делителя
     public static int findGcd(int firstNumber, int secondNumber) {
         if (secondNumber == 0) {
@@ -10,35 +13,21 @@ public class Gcd {
         return findGcd(secondNumber, firstNumber % secondNumber);
     }
 
-    public static void gcd(int sumIterations, String userName) {
-        final int maxRandom = 100; //максимальное случайное число
+    public static void gcd() {
         int oneNumber; //первое случайное число
         int twoNumber; //второе случайное число
-        int count = 0; //счетчик количества вводов пользователя
-        boolean userError = false; //флаг - ошибка пользователя
-        int correctAnswer; // правильный ответ
+        String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
         System.out.println("Find the greatest common divisor of given numbers.");
-        while (count < sumIterations && !userError) {
-            System.out.print("Question: ");
-            oneNumber = Engine.ramdomNumber(maxRandom);
-            twoNumber = Engine.ramdomNumber(maxRandom);
-            correctAnswer = findGcd(oneNumber, twoNumber);
-            System.out.println(oneNumber + " " + twoNumber);
-            System.out.print("Your answer: ");
-            int answer = Engine.userIntAnswer();
 
-            if (answer == correctAnswer) {
-                System.out.println("Correct!");
-                count++;
-                if (count == sumIterations) {
-                    System.out.println("Congratulations, " + userName);
-                }
-            } else {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "' Let's try again, " + userName + "!");
-                userError = true;
-            }
+        for (int i = 0; i < Engine.MAX_COUNT; i++) {
+            oneNumber = Engine.randomNumber(MAX_RANDOM_GCD);
+            twoNumber = Engine.randomNumber(MAX_RANDOM_GCD);
+            dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
+                    + " " + Integer.toString(twoNumber);
+            dataGame[i][Engine.ANSWER_DATA] = Integer.toString(findGcd(oneNumber, twoNumber));
         }
+        Engine.processingAnswer(dataGame);
     }
 }
+

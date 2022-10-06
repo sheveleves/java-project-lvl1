@@ -3,36 +3,24 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
-    public static void even(int sumIterations, String userName) {
-        int count = 0; //счетчик количества вводов пользователя
-        int randomNumber; //случайное число
-        final int maxRandom = 100; //максимальное случайное число
-        boolean userError = false; //флаг - ошибка пользователя
-        String correctAnswer; // правильный ответ
+    public static final int MAX_RANDOM_EVEN = 100; //максимальное случайное число
+
+    public static void even() {
+        int oneNumber; //хранит сгенерированное число
+        String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        while (count < sumIterations && !userError) {
-            randomNumber = Engine.ramdomNumber(maxRandom);
-            if (randomNumber % 2 == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
 
-            System.out.print("Question: " + randomNumber + "\n"
-                    + "Your answer: ");
-            String answer = Engine.userStringAnswer();
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                count++;
-                if (count == sumIterations) {
-                    System.out.println("Congratulations, " + userName);
-                }
+        for (int i = 0; i < Engine.MAX_COUNT; i++) {
+            oneNumber = Engine.randomNumber(MAX_RANDOM_EVEN);
+            dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber);
+            if (oneNumber % 2 == 0) {
+                dataGame[i][Engine.ANSWER_DATA] = "yes";
             } else {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "' Let's try again, " + userName + "!");
-                userError = true;
+                dataGame[i][Engine.ANSWER_DATA] = "no";
             }
         }
+        Engine.processingAnswer(dataGame);
     }
 }
+

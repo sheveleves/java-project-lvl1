@@ -3,6 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
+    public static final int MAX_RANDOM_PRIME = 100; //максимальное случайное число
 
     //определяем простое число или нет
     public static String isPrimeNumber(int number) {
@@ -16,33 +17,23 @@ public class Prime {
         }
         return "yes";
     }
-    public static void prime(int sumIterations, String userName) {
-        int count = 0; //счетчик количества вводов пользователя
-        boolean userError = false; //флаг - ошибка пользователя
-        String correctAnswer; // правильный ответ
-        int randomNumber; //случайное число
-        final int maxRandom = 100; //максимальное случайное число
 
-
+    public static void prime() {
+        String[][] dataGame = new String[Engine.MAX_COUNT][2];
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        while (count < sumIterations && !userError) {
-            randomNumber = Engine.ramdomNumber(maxRandom) + 1; //не должно быть равно нулю
-            correctAnswer = isPrimeNumber(randomNumber);
-            System.out.println("Question: " + randomNumber);
-            System.out.print("Your answer: ");
-            String answer = Engine.userStringAnswer();
+        int oneNumber; //первое случайное число
+        /*
+        Engine.reset();
+        while (Engine.count < Engine.maxCount && !Engine.userError) {
 
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                count++;
-                if (count == sumIterations) {
-                    System.out.println("Congratulations, " + userName);
-                }
-            } else {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "' Let's try again, " + userName + "!");
-                userError = true;
-            }
+         */
+        for (int i = 0; i < Engine.MAX_COUNT; i++) {
+            oneNumber = Engine.randomNumber(MAX_RANDOM_PRIME) + 1; //не должно быть равно нулю
+            dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber);
+            dataGame[i][Engine.ANSWER_DATA] = isPrimeNumber(oneNumber);
         }
+
+        Engine.processingAnswer(dataGame);
     }
 }
+

@@ -3,57 +3,50 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calk {
-    public static void calk(int sumIterations, String userName) {
-        final int maxRandom = 100; //максимальное случайное число
-        final int maxExpression = 3; //количество математических выражений (+, -, *)
+    public static final int MAX_RANDOM_CALK = 100; //максимальное случайное число
+    public static final int MAX_EXPRESSION = 3; //количество математических выражений (+, -, *)
+
+    public static void calk() {
+        int mathExpression; //сопоставляется с математическим выражением String expression
+        String expression; //мат. выражение
         int oneNumber; //первое случайное число
         int twoNumber; //второе случайное число
-        int mathExpression; //сопоставляется с математическим выражением String expression
-        int count = 0; //счетчик количества вводов пользователя
-        boolean userError = false; //флаг - ошибка пользователя
-        int correctAnswer = 0; // правильный ответ
-        String expression = "*"; //мат. выражение
+        String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
         System.out.println("What is the result of the expression?");
 
-        while (count < sumIterations && !userError) {
-            System.out.print("Question: ");
-            oneNumber = Engine.ramdomNumber(maxRandom);
-            twoNumber = Engine.ramdomNumber(maxRandom);
-            mathExpression = Engine.ramdomNumber(maxExpression);
+        for (int i = 0; i < Engine.MAX_COUNT; i++) {
+            oneNumber = Engine.randomNumber(MAX_RANDOM_CALK);
+            twoNumber  = Engine.randomNumber(MAX_RANDOM_CALK);
+            mathExpression = Engine.randomNumber(MAX_EXPRESSION);
 
             switch (mathExpression) {
                 case 0 -> {
-                    expression = "*";
-                    correctAnswer = oneNumber * twoNumber;
+                    expression = " * ";
+                    dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
+                            + expression
+                            + Integer.toString(twoNumber);
+                    dataGame[i][Engine.ANSWER_DATA] = Integer.toString(oneNumber * twoNumber);
                 }
                 case 1 -> {
-                    expression = "+";
-                    correctAnswer = oneNumber + twoNumber;
+                    expression = " + ";
+                    dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
+                            + expression
+                            + Integer.toString(twoNumber);
+                    dataGame[i][Engine.ANSWER_DATA] = Integer.toString(oneNumber + twoNumber);
                 }
                 case 2 -> {
-                    expression = "-";
-                    correctAnswer = oneNumber - twoNumber;
+                    expression = " - ";
+                    dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
+                            + expression
+                            + Integer.toString(twoNumber);
+                    dataGame[i][Engine.ANSWER_DATA] = Integer.toString(oneNumber - twoNumber);
                 }
                 default -> {
                 }
             }
-
-            System.out.println(oneNumber + " " + expression + " " + twoNumber);
-            System.out.print("Your answer: ");
-            int answer = Engine.userIntAnswer();
-
-            if (answer == correctAnswer) {
-                System.out.println("Correct!");
-                count++;
-                if (count == sumIterations) {
-                    System.out.println("Congratulations, " + userName);
-                }
-            } else {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "' Let's try again, " + userName + "!");
-                userError = true;
-            }
         }
+        Engine.processingAnswer(dataGame);
     }
 }
+

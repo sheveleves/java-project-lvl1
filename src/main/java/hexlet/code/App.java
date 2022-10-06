@@ -1,14 +1,13 @@
 package hexlet.code;
-import hexlet.code.games.Calk;
-import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calk;
 import hexlet.code.games.Progression;
 
 public class App {
     public static void main(String[] args) {
-        String userName; //имя игрока
-        final int maxCount = 3; //количество итераций в играх
+
         final int optionGreet = 1;
         final int optionEven = 2;
         final int optionCalk = 3;
@@ -16,7 +15,6 @@ public class App {
         final int optionProgression = 5;
         final int optionPrime = 6;
         final int optionExit = 0;
-
 
         System.out.print("""
                 Please enter the game number and press Enter.
@@ -29,34 +27,31 @@ public class App {
                 0 - Exit
                 Your choice:\s""");
 
-        int choose = Engine.userIntAnswer();
-
+        int choose = Engine.inputIntAnswer();
+        if (choose == 0) {
+            return;
+        }
+        Engine.greeting();
         switch (choose) {
             case optionGreet:
-                Engine.greeting();
                 break;
             case optionEven:
-                userName = Engine.greeting();
-                Even.even(maxCount, userName);
+                Even.even();
                 break;
             case optionCalk:
-                userName = Engine.greeting();
-                Calk.calk(maxCount, userName);
+                Calk.calk();
                 break;
             case optionGCD:
-                userName = Engine.greeting();
-                Gcd.gcd(maxCount, userName);
+                Gcd.gcd();
+                break;
             case optionProgression:
-                userName = Engine.greeting();
-                Progression.progression(maxCount, userName);
+                Progression.progression();
                 break;
             case optionPrime:
-                userName = Engine.greeting();
-                Prime.prime(maxCount, userName);
+                Prime.prime();
                 break;
-            case optionExit:
-                return;
             default:
         }
     }
 }
+

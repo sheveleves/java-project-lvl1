@@ -14,7 +14,6 @@ public class App {
         final int optionGCD = 4;
         final int optionProgression = 5;
         final int optionPrime = 6;
-        final int optionExit = 0;
 
         System.out.print("""
                 Please enter the game number and press Enter.

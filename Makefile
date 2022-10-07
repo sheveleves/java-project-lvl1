@@ -1,24 +1,24 @@
 run-dist:
-	./build/install/app/bin/app
+	./app/build/install/app/bin/app
 
 clean:
-	./gradlew clean installDist
+	./app/gradlew clean installDist
 
 
 install:
-	./gradlew clean install
+	./app/gradlew clean install
 
 
 build:
-	./gradlew clean build
+	./app/gradlew clean build
 
 
 check:
-	./gradlew checkstyleMain
+	./app/gradlew checkstyleMain
 
 
 run:
-	./gradlew clean
-	./gradlew run
+	./app/gradlew clean
+	./app/gradlew run
 
 .PHONY: build

@@ -7,7 +7,7 @@ public class Prime {
 
     //определяем простое число или нет
     public static String isPrimeNumber(int number) {
-        if (number ==1) {
+        if (number == 1) {
             return "no";
         }
         int i = 2;

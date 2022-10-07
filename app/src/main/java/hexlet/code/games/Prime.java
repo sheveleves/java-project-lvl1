@@ -7,6 +7,9 @@ public class Prime {
 
     //определяем простое число или нет
     public static String isPrimeNumber(int number) {
+        if (number ==1) {
+            return "no";
+        }
         int i = 2;
         while (i <= Math.sqrt(number)) {
             if (number % i == 0) {

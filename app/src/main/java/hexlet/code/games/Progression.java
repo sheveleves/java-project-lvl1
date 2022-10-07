@@ -9,11 +9,30 @@ public class Progression {
 
     public static final int MAX_NUMBER_ELEMENT = 9; //макс номер позиции в ряде, который может спрашиваться у игрока
 
-    public static void progression() {
+    public static int[] createProgressionNumber() {
+
+        int[] progressionNumbers = new int[MAX_PROGRESS_NUMBER]; //матрица с 10-ю числами прогрессии
         int firstNumber; //первый элемент прогрессии
         int stepProgression; //шаг арифметической прогресси
+
+        //определяем ряд прогресси
+        firstNumber = Engine.randomNumber(MAX_FIRST_NUMBER);
+        stepProgression = Engine.randomNumber(MAX_STEP_PROGRESSION) + 1;
+        //прибавляем 1, чтобы шаг не мог равняться нулю
+
+        for (int j = 0; j < MAX_PROGRESS_NUMBER; j++) {
+            if (j == 0) {
+                progressionNumbers[j] = firstNumber;
+            } else {
+                progressionNumbers[j] = progressionNumbers[j - 1] + stepProgression;
+            }
+        }
+        return progressionNumbers;
+    }
+
+    public static void progression() {
+
         int numberElement; //номер элемента, который будет спрашиваться у игрока
-        int[] progressionNumbers = new int[MAX_PROGRESS_NUMBER]; //матрица с 10-ю числами прогрессии
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
         String tempSrting; //строка для формирования
 
@@ -21,23 +40,12 @@ public class Progression {
 
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
 
-            //определяем ряд прогресси
-            firstNumber = Engine.randomNumber(MAX_FIRST_NUMBER);
-            stepProgression = Engine.randomNumber(MAX_STEP_PROGRESSION) + 1;
-            //прибавляем 1, чтобы шаг не мог равняться нулю
-
-            for (int j = 0; j < MAX_PROGRESS_NUMBER; j++) {
-                if (j == 0) {
-                    progressionNumbers[j] = firstNumber;
-                } else {
-                    progressionNumbers[j] = progressionNumbers[j - 1] + stepProgression;
-                }
-            }
-
+            int[] progressionNumbers = createProgressionNumber();
             //определяем номер элемента в ряде, который будет спрашиваться у игрока
             numberElement = Engine.randomNumber(MAX_NUMBER_ELEMENT);
 
             tempSrting = "";
+
             //вывод на эран ряда прогресси
             for (int k = 0; k < MAX_PROGRESS_NUMBER; k++) {
                 if (k == numberElement) {

@@ -9,7 +9,7 @@ public class Even {
         int oneNumber; //хранит сгенерированное число
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if number even, otherwise answer 'no'.");
 
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
             oneNumber = Engine.randomNumber(MAX_RANDOM_EVEN);

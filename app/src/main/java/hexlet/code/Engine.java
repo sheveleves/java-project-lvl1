@@ -50,7 +50,7 @@ public class Engine {
                 return;
             }
         }
-        System.out.println("Congratulations, " + userName);
+        System.out.println("Congratulations, " + userName + "!");
     }
 
     //получение слуайного числа

@@ -5,6 +5,7 @@ import hexlet.code.RandomUtils;
 
 public class PrimeNumber {
     public static final int MAX_RANDOM_PRIME = 100; //максимальное случайное число
+    public static final String PRIME_QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     //определяем простое число или нет
     public static String isPrimeNumber(int number) {
@@ -24,7 +25,6 @@ public class PrimeNumber {
 
     public static void prime() {
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int oneNumber; //первое случайное число
         /*
         Engine.reset();
@@ -37,7 +37,7 @@ public class PrimeNumber {
             dataGame[i][Engine.ANSWER_DATA] = isPrimeNumber(oneNumber);
         }
 
-        Engine.processingAnswer(dataGame);
+        Engine.processingAnswer(dataGame, PRIME_QUESTION);
     }
 }
 

@@ -8,6 +8,7 @@ public class Progression {
     public static final int MAX_STEP_PROGRESSION = 9; //генерируем максимальный шаг прогрессии
     public static final int MAX_PROGRESS_NUMBER = 10; //количество элементов прогресси
     public static final int MAX_NUMBER_ELEMENT = 9; //макс номер позиции в ряде, который может спрашиваться у игрока
+    public static final String PROGRESSION_QUESTION = "What number is missing in the progression?";
 
     public static int[] createProgressionNumber() {
 
@@ -34,8 +35,6 @@ public class Progression {
 
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
-        System.out.println("What number is missing in the progression?");
-
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
 
             int[] progressionNumbers = createProgressionNumber();
@@ -56,6 +55,6 @@ public class Progression {
             dataGame[i][Engine.QUESTION_DATA] = tempSrting;
             dataGame[i][Engine.ANSWER_DATA] = Integer.toString(progressionNumbers[numberElement]);
         }
-        Engine.processingAnswer(dataGame);
+        Engine.processingAnswer(dataGame, PROGRESSION_QUESTION);
     }
 }

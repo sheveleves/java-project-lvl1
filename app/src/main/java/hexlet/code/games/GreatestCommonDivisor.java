@@ -5,6 +5,7 @@ import hexlet.code.RandomUtils;
 
 public class GreatestCommonDivisor {
     public static final int MAX_RANDOM_GCD = 100; //максимальное случайное число
+    public static final String GCD_QUESTION = "Find the greatest common divisor of given numbers.";
 
     //поиск наибольшего общего делителя
     public static int findGcd(int firstNumber, int secondNumber) {
@@ -19,8 +20,6 @@ public class GreatestCommonDivisor {
         int twoNumber; //второе случайное число
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
-        System.out.println("Find the greatest common divisor of given numbers.");
-
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
             oneNumber = RandomUtils.randomNumber(MAX_RANDOM_GCD);
             twoNumber = RandomUtils.randomNumber(MAX_RANDOM_GCD);
@@ -28,7 +27,7 @@ public class GreatestCommonDivisor {
                     + " " + Integer.toString(twoNumber);
             dataGame[i][Engine.ANSWER_DATA] = Integer.toString(findGcd(oneNumber, twoNumber));
         }
-        Engine.processingAnswer(dataGame);
+        Engine.processingAnswer(dataGame, GCD_QUESTION);
     }
 }
 

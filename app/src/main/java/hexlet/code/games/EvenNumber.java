@@ -5,12 +5,11 @@ import hexlet.code.RandomUtils;
 
 public class EvenNumber {
     public static final int MAX_RANDOM_EVEN = 100; //максимальное случайное число
+    public static final String EVEN_QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void even() {
         int oneNumber; //хранит сгенерированное число
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
-
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
             oneNumber = RandomUtils.randomNumber(MAX_RANDOM_EVEN);
@@ -21,7 +20,7 @@ public class EvenNumber {
                 dataGame[i][Engine.ANSWER_DATA] = "no";
             }
         }
-        Engine.processingAnswer(dataGame);
+        Engine.processingAnswer(dataGame, EVEN_QUESTION);
     }
 }
 

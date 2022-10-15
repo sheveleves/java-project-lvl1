@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-public class Even {
+public class EvenNumber {
     public static final int MAX_RANDOM_EVEN = 100; //максимальное случайное число
 
     public static void even() {

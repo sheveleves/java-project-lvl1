@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-public class Calk {
+public class Calculator {
     public static final int MAX_RANDOM_CALK = 100; //максимальное случайное число
     public static final int MAX_EXPRESSION = 3; //количество математических выражений (+, -, *)
 

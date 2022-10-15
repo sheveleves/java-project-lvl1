@@ -1,17 +1,18 @@
 package hexlet.code;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Even;
-import hexlet.code.games.Calk;
+import hexlet.code.games.EvenNumber;
+import hexlet.code.games.Calculator;
+import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.PrimeNumber;
 import hexlet.code.games.Progression;
+
 
 public class App {
     static  final int OPTION_GREET = 1;
-    static final int OPTION_EVEN = 2;
-    static final int OPTION_CALK = 3;
-    static final int OPTION_GCD = 4;
+    static final int OPTION_EVEN_NUMBER = 2;
+    static final int OPTION_CALCULATOR = 3;
+    static final int OPTION_GREATEST_COMMON_DIVISOR = 4;
     static final int OPTION_PROGRESSION = 5;
-    static final int OPTION_PRIME = 6;
+    static final int OPTION_PRIME_NUMBER = 6;
 
     public static void main(String[] args) {
         System.out.print("""
@@ -33,20 +34,20 @@ public class App {
         switch (choose) {
             case OPTION_GREET:
                 break;
-            case OPTION_EVEN:
-                Even.even();
+            case OPTION_EVEN_NUMBER:
+                EvenNumber.even();
                 break;
-            case OPTION_CALK:
-                Calk.calk();
+            case OPTION_CALCULATOR:
+                Calculator.calk();
                 break;
-            case OPTION_GCD:
-                Gcd.gcd();
+            case OPTION_GREATEST_COMMON_DIVISOR:
+                GreatestCommonDivisor.gcd();
                 break;
             case OPTION_PROGRESSION:
                 Progression.progression();
                 break;
-            case OPTION_PRIME:
-                Prime.prime();
+            case OPTION_PRIME_NUMBER:
+                PrimeNumber.prime();
                 break;
             default:
         }

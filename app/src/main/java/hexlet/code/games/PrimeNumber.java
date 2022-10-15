@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-public class Prime {
+public class PrimeNumber {
     public static final int MAX_RANDOM_PRIME = 100; //максимальное случайное число
 
     //определяем простое число или нет

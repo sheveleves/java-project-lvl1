@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-public class Gcd {
+public class GreatestCommonDivisor {
     public static final int MAX_RANDOM_GCD = 100; //максимальное случайное число
 
     //поиск наибольшего общего делителя

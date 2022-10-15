@@ -6,15 +6,14 @@ import hexlet.code.games.Calk;
 import hexlet.code.games.Progression;
 
 public class App {
+    static  final int OPTION_GREET = 1;
+    static final int OPTION_EVEN = 2;
+    static final int OPTION_CALK = 3;
+    static final int OPTION_GCD = 4;
+    static final int OPTION_PROGRESSION = 5;
+    static final int OPTION_PRIME = 6;
+
     public static void main(String[] args) {
-
-        final int optionGreet = 1;
-        final int optionEven = 2;
-        final int optionCalk = 3;
-        final int optionGCD = 4;
-        final int optionProgression = 5;
-        final int optionPrime = 6;
-
         System.out.print("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -32,21 +31,21 @@ public class App {
         }
         Engine.greeting();
         switch (choose) {
-            case optionGreet:
+            case OPTION_GREET:
                 break;
-            case optionEven:
+            case OPTION_EVEN:
                 Even.even();
                 break;
-            case optionCalk:
+            case OPTION_CALK:
                 Calk.calk();
                 break;
-            case optionGCD:
+            case OPTION_GCD:
                 Gcd.gcd();
                 break;
-            case optionProgression:
+            case OPTION_PROGRESSION:
                 Progression.progression();
                 break;
-            case optionPrime:
+            case OPTION_PRIME:
                 Prime.prime();
                 break;
             default:

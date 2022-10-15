@@ -7,7 +7,6 @@ public class Progression {
     public static final int MAX_FIRST_NUMBER = 10; //генерируем первый элемент прогресии
     public static final int MAX_STEP_PROGRESSION = 9; //генерируем максимальный шаг прогрессии
     public static final int MAX_PROGRESS_NUMBER = 10; //количество элементов прогресси
-
     public static final int MAX_NUMBER_ELEMENT = 9; //макс номер позиции в ряде, который может спрашиваться у игрока
 
     public static int[] createProgressionNumber() {

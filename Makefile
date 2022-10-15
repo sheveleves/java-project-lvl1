@@ -18,7 +18,6 @@ check:
 
 
 run:
-	./app/gradlew clean
 	./app/gradlew run
 
 .PHONY: build

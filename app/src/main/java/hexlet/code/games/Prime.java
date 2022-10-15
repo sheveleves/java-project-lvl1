@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.RandomUtils;
 
 public class Prime {
     public static final int MAX_RANDOM_PRIME = 100; //максимальное случайное число
@@ -31,7 +32,7 @@ public class Prime {
 
          */
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
-            oneNumber = Engine.randomNumber(MAX_RANDOM_PRIME) + 1; //не должно быть равно нулю
+            oneNumber = RandomUtils.randomNumber(MAX_RANDOM_PRIME) + 1; //не должно быть равно нулю
             dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber);
             dataGame[i][Engine.ANSWER_DATA] = isPrimeNumber(oneNumber);
         }

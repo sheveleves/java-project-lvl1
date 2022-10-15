@@ -52,10 +52,5 @@ public class Engine {
         }
         System.out.println("Congratulations, " + userName + "!");
     }
-
-    //получение слуайного числа
-    public static int randomNumber(int maxNumber) {
-        return (int) (Math.random() * maxNumber);
-    }
 }
 

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.RandomUtils;
 
 public class Calk {
     public static final int MAX_RANDOM_CALK = 100; //максимальное случайное число
@@ -16,9 +17,9 @@ public class Calk {
         System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
-            oneNumber = Engine.randomNumber(MAX_RANDOM_CALK);
-            twoNumber  = Engine.randomNumber(MAX_RANDOM_CALK);
-            mathExpression = Engine.randomNumber(MAX_EXPRESSION);
+            oneNumber = RandomUtils.randomNumber(MAX_RANDOM_CALK);
+            twoNumber  = RandomUtils.randomNumber(MAX_RANDOM_CALK);
+            mathExpression = RandomUtils.randomNumber(MAX_EXPRESSION);
 
             switch (mathExpression) {
                 case 0 -> {

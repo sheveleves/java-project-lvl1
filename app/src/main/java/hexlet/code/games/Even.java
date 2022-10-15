@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.RandomUtils;
 
 public class Even {
     public static final int MAX_RANDOM_EVEN = 100; //максимальное случайное число
@@ -12,7 +13,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
-            oneNumber = Engine.randomNumber(MAX_RANDOM_EVEN);
+            oneNumber = RandomUtils.randomNumber(MAX_RANDOM_EVEN);
             dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber);
             if (oneNumber % 2 == 0) {
                 dataGame[i][Engine.ANSWER_DATA] = "yes";

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.RandomUtils;
 
 public class Progression {
     public static final int MAX_FIRST_NUMBER = 10; //генерируем первый элемент прогресии
@@ -16,8 +17,8 @@ public class Progression {
         int stepProgression; //шаг арифметической прогресси
 
         //определяем ряд прогресси
-        firstNumber = Engine.randomNumber(MAX_FIRST_NUMBER);
-        stepProgression = Engine.randomNumber(MAX_STEP_PROGRESSION) + 1;
+        firstNumber = RandomUtils.randomNumber(MAX_FIRST_NUMBER);
+        stepProgression = RandomUtils.randomNumber(MAX_STEP_PROGRESSION) + 1;
         //прибавляем 1, чтобы шаг не мог равняться нулю
 
         for (int j = 0; j < MAX_PROGRESS_NUMBER; j++) {
@@ -32,9 +33,7 @@ public class Progression {
 
     public static void progression() {
 
-        int numberElement; //номер элемента, который будет спрашиваться у игрока
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
-        String tempSrting; //строка для формирования
 
         System.out.println("What number is missing in the progression?");
 
@@ -42,9 +41,9 @@ public class Progression {
 
             int[] progressionNumbers = createProgressionNumber();
             //определяем номер элемента в ряде, который будет спрашиваться у игрока
-            numberElement = Engine.randomNumber(MAX_NUMBER_ELEMENT);
+            int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
 
-            tempSrting = "";
+            String tempSrting = "";
 
             //вывод на эран ряда прогресси
             for (int k = 0; k < MAX_PROGRESS_NUMBER; k++) {
@@ -61,4 +60,3 @@ public class Progression {
         Engine.processingAnswer(dataGame);
     }
 }
-

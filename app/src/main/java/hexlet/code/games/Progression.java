@@ -10,7 +10,7 @@ public class Progression {
     public static final int MAX_NUMBER_ELEMENT = 9; //макс номер позиции в ряде, который может спрашиваться у игрока
     public static final String PROGRESSION_QUESTION = "What number is missing in the progression?";
 
-    public static int[] createProgressionNumber() {
+    private static int[] createProgressionNumber() {
 
         int[] progressionNumbers = new int[MAX_PROGRESS_NUMBER]; //матрица с 10-ю числами прогрессии
         int firstNumber; //первый элемент прогрессии

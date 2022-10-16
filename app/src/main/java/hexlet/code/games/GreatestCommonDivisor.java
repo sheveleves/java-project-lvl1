@@ -8,7 +8,7 @@ public class GreatestCommonDivisor {
     public static final String GCD_QUESTION = "Find the greatest common divisor of given numbers.";
 
     //поиск наибольшего общего делителя
-    public static int findGcd(int firstNumber, int secondNumber) {
+    private static int findGcd(int firstNumber, int secondNumber) {
         if (secondNumber == 0) {
             return firstNumber;
         }

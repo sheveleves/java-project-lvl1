@@ -30,12 +30,12 @@ public class Engine {
 
     }
 
-    public static void processingAnswer(String[][] dataGame, String questionGame) {
+    public static void processingAnswer(String[][] dataGame, String taskDescription) {
         int count; //счетчик количества пройдойденных этапов игры
         String userAnswer; //ответ пользователя
         count = 0;
 
-        System.out.println(questionGame);
+        System.out.println(taskDescription);
         while (count < Engine.MAX_COUNT) {
             System.out.print("Question: " + dataGame[count][QUESTION_DATA]);
 

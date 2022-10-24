@@ -55,6 +55,6 @@ public class Progression {
             dataGame[i][Engine.QUESTION_DATA] = tempSrting;
             dataGame[i][Engine.ANSWER_DATA] = Integer.toString(progressionNumbers[numberElement]);
         }
-        Engine.processingAnswer(dataGame, PROGRESSION_QUESTION);
+        Engine.run(dataGame, PROGRESSION_QUESTION);
     }
 }

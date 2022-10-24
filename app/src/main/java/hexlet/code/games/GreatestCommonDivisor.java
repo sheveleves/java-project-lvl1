@@ -27,7 +27,7 @@ public class GreatestCommonDivisor {
                     + " " + Integer.toString(twoNumber);
             dataGame[i][Engine.ANSWER_DATA] = Integer.toString(findGcd(oneNumber, twoNumber));
         }
-        Engine.processingAnswer(dataGame, GCD_QUESTION);
+        Engine.run(dataGame, GCD_QUESTION);
     }
 }
 

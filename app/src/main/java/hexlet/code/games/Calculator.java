@@ -46,7 +46,7 @@ public class Calculator {
                 }
             }
         }
-        Engine.processingAnswer(dataGame, CALCULATOR_QUESTION);
+        Engine.run(dataGame, CALCULATOR_QUESTION);
     }
 }
 

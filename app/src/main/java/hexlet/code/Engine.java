@@ -10,7 +10,7 @@ public class Engine {
 
 
     //получение строки-ответа, введенного пользователем
-    public static String inputStringAnswer() {
+    private static String inputStringAnswer() {
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }
@@ -30,7 +30,7 @@ public class Engine {
 
     }
 
-    public static void processingAnswer(String[][] dataGame, String taskDescription) {
+    public static void run(String[][] dataGame, String taskDescription) {
         int count; //счетчик количества пройдойденных этапов игры
         String userAnswer; //ответ пользователя
         count = 0;

@@ -25,7 +25,7 @@ public class EvenNumber {
                 dataGame[i][Engine.ANSWER_DATA] = "no";
             }
         }
-        Engine.processingAnswer(dataGame, EVEN_QUESTION);
+        Engine.run(dataGame, EVEN_QUESTION);
     }
 }
 

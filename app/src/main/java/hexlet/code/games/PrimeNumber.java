@@ -36,7 +36,7 @@ public class PrimeNumber {
             }
         }
 
-        Engine.processingAnswer(dataGame, PRIME_QUESTION);
+        Engine.run(dataGame, PRIME_QUESTION);
     }
 }
 

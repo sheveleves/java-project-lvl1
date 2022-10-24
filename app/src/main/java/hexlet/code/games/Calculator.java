@@ -4,47 +4,43 @@ import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class Calculator {
-    public static final int MAX_RANDOM_CALK = 100; //максимальное случайное число
-    public static final int MAX_EXPRESSION = 3; //количество математических выражений (+, -, *)
-    public static final String CALCULATOR_QUESTION = "What is the result of the expression?";
+    private static final int MAX_RANDOM_CALK = 100; //максимальное случайное число
+    private static final int MAX_EXPRESSION = 3; //количество математических выражений (+, -, *)
+    private static final String CALCULATOR_QUESTION = "What is the result of the expression?";
+    private static final String[] OPERATOR = new String[] {"*", "+", "-"};
+    private static int expression(int numberA, int numberB, String operator) {
+
+        switch (operator) {
+            case "*": {
+                return numberA * numberB;
+            }
+            case "+": {
+                return numberA + numberB;
+            }
+            case "-": {
+                return numberA - numberB;
+            }
+            default: {
+                return 0;
+            }
+        }
+    }
 
     public static void calk() {
-        int mathExpression; //сопоставляется с математическим выражением String expression
-        String expression; //мат. выражение
+        String mathExpression; //сопоставляется с математическим выражением String expression
         int oneNumber; //первое случайное число
         int twoNumber; //второе случайное число
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
         for (int i = 0; i < Engine.MAX_COUNT; i++) {
             oneNumber = RandomUtils.randomNumber(MAX_RANDOM_CALK);
-            twoNumber  = RandomUtils.randomNumber(MAX_RANDOM_CALK);
-            mathExpression = RandomUtils.randomNumber(MAX_EXPRESSION);
+            twoNumber = RandomUtils.randomNumber(MAX_RANDOM_CALK);
+            mathExpression = OPERATOR[RandomUtils.randomNumber(MAX_EXPRESSION)];
 
-            switch (mathExpression) {
-                case 0 -> {
-                    expression = " * ";
-                    dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
-                            + expression
-                            + Integer.toString(twoNumber);
-                    dataGame[i][Engine.ANSWER_DATA] = Integer.toString(oneNumber * twoNumber);
-                }
-                case 1 -> {
-                    expression = " + ";
-                    dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
-                            + expression
-                            + Integer.toString(twoNumber);
-                    dataGame[i][Engine.ANSWER_DATA] = Integer.toString(oneNumber + twoNumber);
-                }
-                case 2 -> {
-                    expression = " - ";
-                    dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
-                            + expression
-                            + Integer.toString(twoNumber);
-                    dataGame[i][Engine.ANSWER_DATA] = Integer.toString(oneNumber - twoNumber);
-                }
-                default -> {
-                }
-            }
+            dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
+                    + " " + mathExpression + " "
+                    + Integer.toString(twoNumber);
+            dataGame[i][Engine.ANSWER_DATA] = Integer.toString(expression(oneNumber, twoNumber, mathExpression));
         }
         Engine.run(dataGame, CALCULATOR_QUESTION);
     }

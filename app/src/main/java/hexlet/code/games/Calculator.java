@@ -11,16 +11,16 @@ public class Calculator {
     private static int expression(int numberA, int numberB, String operator) {
 
         switch (operator) {
-            case "*": {
+            case "*" -> {
                 return numberA * numberB;
             }
-            case "+": {
+            case "+" -> {
                 return numberA + numberB;
             }
-            case "-": {
+            case "-" -> {
                 return numberA - numberB;
             }
-            default: {
+            default -> {
                 return 0;
             }
         }

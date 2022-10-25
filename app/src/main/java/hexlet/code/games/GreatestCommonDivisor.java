@@ -15,7 +15,7 @@ public class GreatestCommonDivisor {
         return findGcd(secondNumber, firstNumber % secondNumber);
     }
 
-    public static void gcd() {
+    public static void runGcd() {
         int oneNumber; //первое случайное число
         int twoNumber; //второе случайное число
         String[][] dataGame = new String[Engine.MAX_COUNT][2];

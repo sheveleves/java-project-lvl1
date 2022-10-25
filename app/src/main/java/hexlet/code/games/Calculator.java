@@ -26,7 +26,7 @@ public class Calculator {
         }
     }
 
-    public static void calk() {
+    public static void runCalk() {
         String mathExpression; //сопоставляется с математическим выражением String expression
         int oneNumber; //первое случайное число
         int twoNumber; //второе случайное число

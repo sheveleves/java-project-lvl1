@@ -24,7 +24,7 @@ public class Progression {
         return progressionNumbers;
     }
 
-    public static void progression() {
+    public static void runProgression() {
 
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 

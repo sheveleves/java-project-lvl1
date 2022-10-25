@@ -12,7 +12,7 @@ public class EvenNumber {
         return (number % 2 == 0);
     }
 
-    public static void even() {
+    public static void runEven() {
         int oneNumber; //хранит сгенерированное число
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 

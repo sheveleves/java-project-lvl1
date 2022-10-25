@@ -23,7 +23,7 @@ public class PrimeNumber {
         return true;
     }
 
-    public static void prime() {
+    public static void runPrime() {
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
         int oneNumber; //первое случайное число
         for (int i = 0; i < Engine.MAX_COUNT; i++) {

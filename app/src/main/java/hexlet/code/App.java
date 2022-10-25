@@ -35,19 +35,19 @@ public class App {
             case OPTION_GREET:
                 break;
             case OPTION_EVEN_NUMBER:
-                EvenNumber.even();
+                EvenNumber.runEven();
                 break;
             case OPTION_CALCULATOR:
-                Calculator.calk();
+                Calculator.runCalk();
                 break;
             case OPTION_GREATEST_COMMON_DIVISOR:
-                GreatestCommonDivisor.gcd();
+                GreatestCommonDivisor.runGcd();
                 break;
             case OPTION_PROGRESSION:
-                Progression.progression();
+                Progression.runProgression();
                 break;
             case OPTION_PRIME_NUMBER:
-                PrimeNumber.prime();
+                PrimeNumber.runPrime();
                 break;
             default:
         }

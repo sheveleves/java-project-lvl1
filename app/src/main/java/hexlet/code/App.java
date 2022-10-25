@@ -5,6 +5,8 @@ import hexlet.code.games.GreatestCommonDivisor;
 import hexlet.code.games.PrimeNumber;
 import hexlet.code.games.Progression;
 
+import java.util.Scanner;
+
 
 public class App {
     static  final int OPTION_GREET = 1;
@@ -26,13 +28,15 @@ public class App {
                 0 - Exit
                 Your choice:\s""");
 
-        int choose = Engine.inputIntAnswer();
+        Scanner input = new Scanner(System.in);
+        int choose = input.nextInt();
         if (choose == 0) {
             return;
         }
-        Engine.greeting();
+
         switch (choose) {
             case OPTION_GREET:
+                Cli.greeting();
                 break;
             case OPTION_EVEN_NUMBER:
                 EvenNumber.runEven();

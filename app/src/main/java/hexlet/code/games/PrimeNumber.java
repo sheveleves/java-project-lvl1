@@ -9,7 +9,7 @@ public class PrimeNumber {
 
     //определяем простое число или нет
     private static boolean isPrimeNumber(int number) {
-        if (number == 1) {
+        if (number < 2) {
             return false;
         }
         int i = 2;

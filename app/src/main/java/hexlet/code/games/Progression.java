@@ -10,18 +10,11 @@ public class Progression {
     public static final int MAX_NUMBER_ELEMENT = 9; //макс номер позиции в ряде, который может спрашиваться у игрока
     public static final String PROGRESSION_QUESTION = "What number is missing in the progression?";
 
-    private static int[] createProgressionNumber() {
+    private static int[] createProgressionNumber(int firstNumber, int stepProgression, int lengthProgression) {
 
-        int[] progressionNumbers = new int[MAX_PROGRESS_NUMBER]; //матрица с 10-ю числами прогрессии
-        int firstNumber; //первый элемент прогрессии
-        int stepProgression; //шаг арифметической прогресси
+        int[] progressionNumbers = new int[lengthProgression]; //матрица с 10-ю числами прогрессии
 
-        //определяем ряд прогресси
-        firstNumber = RandomUtils.randomNumber(MAX_FIRST_NUMBER);
-        stepProgression = RandomUtils.randomNumber(MAX_STEP_PROGRESSION) + 1;
-        //прибавляем 1, чтобы шаг не мог равняться нулю
-
-        for (int j = 0; j < MAX_PROGRESS_NUMBER; j++) {
+        for (int j = 0; j < lengthProgression; j++) {
             if (j == 0) {
                 progressionNumbers[j] = firstNumber;
             } else {
@@ -35,9 +28,16 @@ public class Progression {
 
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
 
-        for (int i = 0; i < Engine.MAX_COUNT; i++) {
+        int firstNumber; //первый элемент прогрессии
+        int stepProgression; //шаг арифметической прогресси
 
-            int[] progressionNumbers = createProgressionNumber();
+        for (int i = 0; i < Engine.MAX_COUNT; i++) {
+            //определяем ряд прогресси
+            firstNumber = RandomUtils.randomNumber(MAX_FIRST_NUMBER);
+            stepProgression = RandomUtils.randomNumber(MAX_STEP_PROGRESSION) + 1;
+            //прибавляем 1, чтобы шаг не мог равняться нулю
+
+            int[] progressionNumbers = createProgressionNumber(firstNumber, stepProgression, MAX_PROGRESS_NUMBER);
             //определяем номер элемента в ряде, который будет спрашиваться у игрока
             int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
 

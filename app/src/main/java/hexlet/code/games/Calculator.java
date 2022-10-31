@@ -21,7 +21,7 @@ public class Calculator {
                 return numberA - numberB;
             }
             default -> {
-                return 0;
+                throw new UnsupportedOperationException("This arithmetic expression is not available!");
             }
         }
     }
@@ -40,7 +40,8 @@ public class Calculator {
             dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
                     + " " + mathExpression + " "
                     + Integer.toString(twoNumber);
-            dataGame[i][Engine.ANSWER_DATA] = Integer.toString(calculateExpression(oneNumber, twoNumber, mathExpression));
+            dataGame[i][Engine.ANSWER_DATA] =
+                    Integer.toString(calculateExpression(oneNumber, twoNumber, mathExpression));
         }
         Engine.run(dataGame, CALCULATOR_QUESTION);
     }

@@ -8,7 +8,7 @@ public class Calculator {
     private static final int MAX_EXPRESSION = 3; //количество математических выражений (+, -, *)
     private static final String CALCULATOR_QUESTION = "What is the result of the expression?";
     private static final String[] OPERATOR = new String[] {"*", "+", "-"};
-    private static int expression(int numberA, int numberB, String operator) {
+    private static int calculateExpression(int numberA, int numberB, String operator) {
 
         switch (operator) {
             case "*" -> {
@@ -40,7 +40,7 @@ public class Calculator {
             dataGame[i][Engine.QUESTION_DATA] = Integer.toString(oneNumber)
                     + " " + mathExpression + " "
                     + Integer.toString(twoNumber);
-            dataGame[i][Engine.ANSWER_DATA] = Integer.toString(expression(oneNumber, twoNumber, mathExpression));
+            dataGame[i][Engine.ANSWER_DATA] = Integer.toString(calculateExpression(oneNumber, twoNumber, mathExpression));
         }
         Engine.run(dataGame, CALCULATOR_QUESTION);
     }

@@ -24,6 +24,20 @@ public class Progression {
         return progressionNumbers;
     }
 
+    private static String formatProgressionToStringWithPassNumber(
+            int[] progressionNumbers, int numberElement, int lengthProgression) {
+        var result = new StringBuilder();
+        for (int i = 0; i < lengthProgression; i++) {
+            if (i == numberElement) {
+                result.append(".. ");
+            } else {
+                result.append(Integer.toString(progressionNumbers[i]));
+                result.append(" ");
+            }
+        }
+        return result.toString();
+    }
+
     public static void runProgression() {
 
         String[][] dataGame = new String[Engine.MAX_COUNT][2];
@@ -36,23 +50,11 @@ public class Progression {
             firstNumber = RandomUtils.randomNumber(MAX_FIRST_NUMBER);
             stepProgression = RandomUtils.randomNumber(MAX_STEP_PROGRESSION) + 1;
             //прибавляем 1, чтобы шаг не мог равняться нулю
-
             int[] progressionNumbers = createProgressionNumber(firstNumber, stepProgression, MAX_PROGRESS_NUMBER);
             //определяем номер элемента в ряде, который будет спрашиваться у игрока
             int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
-
-            String tempSrting = "";
-
-            //вывод на эран ряда прогресси
-            for (int k = 0; k < MAX_PROGRESS_NUMBER; k++) {
-                if (k == numberElement) {
-                    tempSrting = tempSrting.concat(".. ");
-                } else {
-                    tempSrting = tempSrting.concat(Integer.toString(progressionNumbers[k]));
-                    tempSrting = tempSrting.concat(" ");
-                }
-            }
-            dataGame[i][Engine.QUESTION_DATA] = tempSrting;
+            dataGame[i][Engine.QUESTION_DATA] =
+                    formatProgressionToStringWithPassNumber(progressionNumbers, numberElement, MAX_PROGRESS_NUMBER);
             dataGame[i][Engine.ANSWER_DATA] = Integer.toString(progressionNumbers[numberElement]);
         }
         Engine.run(dataGame, PROGRESSION_QUESTION);
